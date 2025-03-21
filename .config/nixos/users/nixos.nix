@@ -17,22 +17,6 @@
     pinentry-curses
   ];
 
-  helix.lsps = [
-    "bash"
-    "css"
-    "dockerfile"
-    "html"
-    "java"
-    "json"
-    "markdown"
-    "nix"
-    "python"
-    "rust"
-    "toml"
-    "typescript"
-    "yaml"
-  ];
-
   programs.gpg.mutableKeys = true;
   programs.gpg.mutableTrust = true;
   services.gpg-agent.pinentryPackage = pkgs.pinentry-curses;
@@ -165,5 +149,5 @@
     zig.symbol = "zig ";
   };
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.11";
 }

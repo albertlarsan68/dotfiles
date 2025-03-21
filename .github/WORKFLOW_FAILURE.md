@@ -1,6 +1,6 @@
 ---
 title: Failure in '{{ env.WORKFLOW_NAME }}' workflow {{ date | date('YYYY-MM-DD') }}
-assignees: kjhoerr
+assignees: albertlarsan68
 labels: bug, build-failure
 ---
 Failure occurred while testing system and home-manager configurations after updating flake inputs.
