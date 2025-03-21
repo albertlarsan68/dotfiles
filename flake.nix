@@ -63,9 +63,6 @@
         ./.config/nixos/os/secure-boot.nix
         ./.config/nixos/os/system.nix
         ./.config/nixos/os/upgrade.nix
-        {
-          nixpkgs.overlays = osOverlays;
-        }
       ];
 
       # OS config modules for base WSL system
