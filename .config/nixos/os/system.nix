@@ -32,6 +32,14 @@ in {
   services.desktopManager = {
     plasma6.enable = lib.mkDefault false;
   };
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+  security.polkit.enable = true;
+  security.pam.loginLimits = [
+    { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+  ];
   programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
   programs.zsh.enable = lib.mkDefault true;
 

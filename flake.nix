@@ -60,6 +60,7 @@
       guiModules = [
         ./.config/nixos/home/applications.nix
         ./.config/nixos/home/gnome.nix
+        ./.config/nixos/home/sway.nix
         {
           nixpkgs.overlays = guiOverlays;
         }
