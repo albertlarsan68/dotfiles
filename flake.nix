@@ -43,7 +43,7 @@
         ./.config/nixos/home/tui.nix
         ./.config/nixos/home/git.nix
         ./.config/nixos/home/neovim.nix
-        ./.config/nixos/home/helix.nix
+        # ./.config/nixos/home/helix.nix
         ./.config/nixos/home/gpg-agent.nix
       ];
 
@@ -112,7 +112,7 @@
       };
       nixosConfigurations = {
 	spruce-frame = nixosSystem [
-          inputs.nixos-hardware.nixosModules.framework-13-intel-core-ultra-series1
+          inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series1
           ./.config/nixos/systems/spruce-frame.nix
         ];
 
