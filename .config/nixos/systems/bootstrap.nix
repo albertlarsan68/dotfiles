@@ -20,7 +20,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.utf8";
 
   # Enable the GNOME Desktop Environment with wayland.
@@ -29,12 +29,11 @@
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "fr";
+    xkb.variant = "";
   };
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -45,9 +44,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kjhoerr = {
+  users.users.alarsan68 = {
     isNormalUser = true;
-    description = "Kevin Hoerr";
+    description = "Albert Larsan";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox-wayland
@@ -71,16 +70,15 @@
     kakoune
     gcc
     gnupg
-    pinentry-gnome
     sbctl
     tpm2-tss
     git
-    gnome.gnome-tweaks
-    gnome.gpaste
+    gnome-tweaks
+    gpaste
     gnomeExtensions.night-theme-switcher
   ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     ibm-plex
     merriweather
     noto-fonts
@@ -102,7 +100,7 @@
     enableSSHSupport = true;
   };
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "24.11";
 
   nix.settings.experimental-features = "nix-command flakes";
 
