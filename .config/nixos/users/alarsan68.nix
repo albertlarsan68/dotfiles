@@ -17,19 +17,11 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "gsconnect@andyholmes.github.io"
-        "nightthemeswitcher@romainvigier.fr"
-        "GPaste@gnome-shell-extensions.gnome.org"
-        "onedrive@client.onedrive.com"
-        "blur-my-shell@aunetx"
-        "luminus-shell-y@dikasp.gitlab"
       ];
       favorite-apps = [
-        "chromium-browser.desktop"
+        "zen.desktop"
         "org.keepassxc.KeePassXC.desktop"
-        "code.desktop"
-        "org.gnome.Nautilus.desktop"
-        "com.raggesilver.BlackBox.desktop"
+        "org.gnome.Console.desktop"
       ];
     };
   };
