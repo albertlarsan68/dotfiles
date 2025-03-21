@@ -5,11 +5,11 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" ];
       kernelModules = [ "dm-snapshot" "tpm_crb" ];
 
       luks.devices."enc" = {
-        device = "/dev/disk/by-uuid/6b8a5b1c-9cd5-4e25-a713-bba1e90ecaf5";
+        device = "/dev/disk/by-uuid/06574ecb-cbcf-48f3-8a23-a0068322e776";
         preLVM = true;
       };
     };
@@ -19,32 +19,32 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5767338b-cc2e-43f3-8e07-f31c82a42345";
+    { device = "/dev/disk/by-uuid/2a95c3e2-e582-4163-bce5-7e45b51c3911";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/5767338b-cc2e-43f3-8e07-f31c82a42345";
+    { device = "/dev/disk/by-uuid/2a95c3e2-e582-4163-bce5-7e45b51c3911";
       fsType = "btrfs";
       options = [ "subvol=home" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/5767338b-cc2e-43f3-8e07-f31c82a42345";
+    { device = "/dev/disk/by-uuid/2a95c3e2-e582-4163-bce5-7e45b51c3911";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/5767338b-cc2e-43f3-8e07-f31c82a42345";
+    { device = "/dev/disk/by-uuid/2a95c3e2-e582-4163-bce5-7e45b51c3911";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/5767338b-cc2e-43f3-8e07-f31c82a42345";
+    { device = "/dev/disk/by-uuid/2a95c3e2-e582-4163-bce5-7e45b51c3911";
       fsType = "btrfs";
       options = [ "subvol=log" "compress=zstd" "noatime" ];
       neededForBoot = true;
@@ -56,7 +56,7 @@
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e0126018-1442-4e0f-9a48-81af5aa0778d"; }
+    [ { device = "/dev/disk/by-uuid/ca446774-a211-4c30-86c7-2a39e314262e"; }
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
