@@ -28,7 +28,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     # Zen Browser
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -40,6 +43,9 @@
         inherit system;
         config.allowUnfree = true;
       };
+      guiOverlays = [
+        (_: _: { zen-browser = inputs.zen-browser.packages.${system}.default; })
+      ];
 
       # Base user config modules
       homeModules = [
@@ -54,6 +60,9 @@
       guiModules = [
         ./.config/nixos/home/applications.nix
         ./.config/nixos/home/gnome.nix
+        {
+          nixpkgs.overlays = guiOverlays;
+        }
       ];
 
       # Base OS configs, adapts to system configs
