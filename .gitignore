@@ -2,8 +2,6 @@
 !.gitignore
 !.config/
 /.config/*
-!.config/guix/
-/.config/guix/current
 !.config/nixos/
 !.config/nix/
 !.m2/

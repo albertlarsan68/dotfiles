@@ -1,5 +1,5 @@
 # Albert Larsan dotfiles
-[![update](https://github.com/albertlarsan68/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/kjhoerr/dotfiles/actions/workflows/update.yml)
+[![update](https://github.com/albertlarsan68/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/albertlarsan68/dotfiles/actions/workflows/update.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Forked from [kjhoerr's dotfiles](https://github.com/kjhoerr/dotfiles).
