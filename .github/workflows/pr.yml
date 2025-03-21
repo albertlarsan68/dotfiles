@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        home-user: [ 'kjhoerr', 'nixos' ]
+        home-user: [ 'alarsan68', 'nixos' ]
     steps:
       - uses: easimon/maximize-build-space@v10
         with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        nixos-system: [ 'ariadne', 'cronos', 'whisker', 'nixos-wsl' ]
+        nixos-system: [ 'spruce-frame', 'nixos-wsl' ]
     steps:
       - uses: easimon/maximize-build-space@v10
         with:
