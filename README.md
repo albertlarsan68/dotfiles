@@ -1,6 +1,8 @@
-# kjhoerr dotfiles
-[![update](https://github.com/kjhoerr/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/kjhoerr/dotfiles/actions/workflows/update.yml)
+# Albert Larsan dotfiles
+[![update](https://github.com/albertlarsan68/dotfiles/actions/workflows/update.yml/badge.svg)](https://github.com/kjhoerr/dotfiles/actions/workflows/update.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Forked from [kjhoerr's dotfiles](https://github.com/kjhoerr/dotfiles).
 
 ## NixOS Configuration
 
@@ -10,14 +12,14 @@ flake:
 
 ```bash
 # Invoked off of current hostname
-sudo nixos-rebuild --flake github:kjhoerr/dotfiles switch
+sudo nixos-rebuild --flake github:albertlarsan68/dotfiles switch
 ```
 
 And I can update my user's home configurations against this flake as well:
 
 ```bash
 # Invoked off of current username
-home-manager --flake github:kjhoerr/dotfiles switch
+home-manager --flake github:albertlarsan68/dotfiles switch
 ```
 
 In this way system and user profiles can be managed and updated separately.
@@ -25,7 +27,7 @@ Configuration changes can be made without needing to interact with each system,
 and configuration can be simplified through sharing common outputs.
 
 Auto-upgrade and garbage collection is enabled using the default daily
-frequency and targets `github:kjhoerr/dotfiles` as above. (This option does not
+frequency and targets `github:albertlarsan68/dotfiles` as above. (This option does not
 exist yet for home-manager flake configurations, unfortunately.)
 
 The flake itself is kept as simple as possible: necessary inputs only and

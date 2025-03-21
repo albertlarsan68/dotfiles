@@ -27,11 +27,6 @@
     # Provides module support for specific vendor hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    # fw ectool as configured for FW13 7040 AMD (until patch is upstreamed)
-    fw-ectool = {
-      url = "github:tlvince/ectool.nix";
-      inputs.nixpkgs.follows = "nixos-pkgs";
-    };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -42,9 +37,6 @@
         inherit system;
         config.allowUnfree = true;
       };
-      osOverlays = [
-        (_: _: { fw-ectool = inputs.fw-ectool.packages.${system}.ectool; })
-      ];
 
       # Base user config modules
       homeModules = [
@@ -114,29 +106,33 @@
     in {
       homeConfigurations = {
 
-        khoerr = homeUser [ ./.config/nixos/users/khoerr.nix ];
+        alarsan68 = homeUser [ ./.config/nixos/users/alarsan68.nix ];
 
-        kjhoerr = homeUser [ ./.config/nixos/users/kjhoerr.nix ];
+        # kjhoerr = homeUser [ ./.config/nixos/users/kjhoerr.nix ];
 
         nixos = wslUser [ ./.config/nixos/users/nixos.nix ];
 
       };
       nixosConfigurations = {
-
-        ariadne = nixosSystem [
-          inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-          ./.config/nixos/systems/ariadne.nix
+	spruce-frame = nixosSystem [
+          inputs.nixos-hardware.nixosModules.framework-13-intel-core-ultra-series1
+          ./.config/nixos/systems/spruce-frame.nix
         ];
 
-        cronos = nixosSystem [
-          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p1-gen3
-          ./.config/nixos/systems/cronos.nix
-        ];
+        #ariadne = nixosSystem [
+        #  inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+        #  ./.config/nixos/systems/ariadne.nix
+        #];
 
-        whisker = nixosSystem [
-          inputs.nixos-hardware.nixosModules.common-gpu-amd
-          ./.config/nixos/systems/whisker.nix
-        ];
+        #cronos = nixosSystem [
+        #  inputs.nixos-hardware.nixosModules.lenovo-thinkpad-p1-gen3
+        #  ./.config/nixos/systems/cronos.nix
+        #];
+
+        #whisker = nixosSystem [
+        #  inputs.nixos-hardware.nixosModules.common-gpu-amd
+        #  ./.config/nixos/systems/whisker.nix
+        #];
 
         nixos-wsl = wslSystem [
           ./.config/nixos/systems/wsl.nix
