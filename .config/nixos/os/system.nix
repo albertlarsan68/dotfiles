@@ -8,7 +8,7 @@ let
   };
 in {
 
-  time.timeZone = "America/New_York";
+  time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.utf8";
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
