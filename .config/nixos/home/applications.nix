@@ -1,5 +1,5 @@
 # applications.nix
-{ lib, pkgs, ... }: {
+{ inputs, lib, pkgs, ... }: {
 
   # Use lib.mkDefault where possible so user config can override without lib.mkForce
 
@@ -7,6 +7,7 @@
   # May include extra config OOTB that the package does not
   programs.firefox.enable = lib.mkDefault true;
   home.packages = lib.mkBefore (with pkgs; [
+    inputs.zen-browser.packages."${system}".default
     keepassxc
   ]);
 

@@ -27,6 +27,9 @@
     # Provides module support for specific vendor hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    # Zen Browser
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
   };
 
   outputs = { nixpkgs, ... }@inputs:
